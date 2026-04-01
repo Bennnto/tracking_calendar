@@ -1,0 +1,52 @@
+* {
+    margin : 0;
+    padding : 0;
+    box-sizing : border-box;
+}
+body {
+    font-family : Arial, Helvetica, sans-serif;
+    padding : 15px;
+    line-height: 1.5;
+
+}
+h3 {
+    color: blue;
+    margin-bottom: 7px;
+}
+
+.expense-container {
+    background: lightskyblue;
+    font-size: 15px;
+    margin: 10px;
+    padding: 8px;
+}
+
+.form-container{
+    background : lightgray;
+    font-size : 17px;
+    margin: 10px;
+    padding: 8px;
+}
+.form-title, .form-amount {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid black;
+    font-size : 17px;
+    border-radius: 15px;
+}
+button {
+    color : white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.delete-butt {
+    background: red;
+    border-radius: 8px;
+    padding: 10px 5px;
+}
+.submit-butt {
+    background: green;
+    border-radius: 8px;
+    padding: 10px 5px;
+}

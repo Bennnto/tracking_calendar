@@ -1,0 +1,64 @@
+{% extends 'event_master.html' %}
+{% load custom_filters %}
+{% block title %}
+Event Calendar Views 
+{% endblock %}
+
+{% block calendar %}
+<div class="blog-container">
+    <h1 class="blog-title">{{ month_name }} {{ year }}</h1>
+    <div style="margin-bottom: 16px">
+
+    </div>
+    <table style="width: 100%; border-collapse: collaps; text-align:center;">
+        <thead>
+            <tr>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+                <th>Sun</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for week in weeks %}
+            <tr>
+                {% for day in week %}
+                <td style="border:1px solid #e5e7eb; vertical-align:top; padding: 4px">
+                    {% if day > 0 %}
+                    <div><strong>{{ day }}</strong></div>
+                    {% if day in events_by_day %}
+                    <ul style="list-style:none; padding-left:0; margin:4px 0 0 0; text-align:left;">
+                        {% for event in events_by_day|get_item:day %}
+                        <li>
+                            {{ event.title }}
+                            {% if event.start_time %}
+                                ({{ event.start_time }}{% if event.end_time %}-{{ event.end_time }} {% endif %})
+                            {% endif %}
+                            <a href="{% url 'delete_event' event.id %}"><button>Del</button></a>
+                            <a href="{% url 'event_detail' event.id %}"><button>info</button></a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                {% endif %}
+            </td>
+            {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+{% block content %}
+<div class="form-container">
+    <h3>Create Event</h3>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">submit</button>
+</form>
+</div>
+{% endblock %}

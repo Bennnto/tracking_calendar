@@ -1,0 +1,28 @@
+{% extends 'master.html' %}
+
+{% block title %}
+Expense Tracker 
+{% endblock %}
+
+{% block forms %}
+<div class="form-container">
+    <h3 class="form-header">Create Transaction</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <button class="submit-butt" type="submit">Create</button>
+    </form>
+</div>
+{% endblock %}
+{% block content %}
+<div class="expense-container">
+<h2 class="expense-header">Transaction History</h2>
+{% for item in expenses %}
+        <h3 class="item-header">{{ item.title }}</h3>
+        <p class="item-detail"> Type : {{ item.transaction_type }} <span><strong>Amount : {{ item.amount }} CAD</strong></span> on {{ item.created }}</p>
+        <a href="{% url 'delete_expense' item.id %}"><button class="delete-butt">Delete</button></a>
+    {% empty %}
+        <p>No transaction</p>
+    {% endfor %}
+    </div>
+{% endblock %}

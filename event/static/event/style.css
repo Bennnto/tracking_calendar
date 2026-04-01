@@ -1,0 +1,195 @@
+/* Calendar Container */
+/* Fix overflow */
+* {
+    box-sizing: border-box;
+}
+
+.blog-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #f9fafb 0%, lightslategray 100%);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.blog-title {
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Calendar Table */
+table {
+    background: white !important;
+    border-radius: 8px !important;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table thead {
+    background: lightslategray;
+    color: white;
+}
+
+table th {
+    padding: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+table td {
+    height: 100px;
+    padding: 8px !important;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb !important;
+    position: relative;
+}
+
+table td:hover {
+    background: #f3f4f6;
+    transition: 0.2s ease;
+}
+
+table td strong {
+    display: block;
+    color: #667eea;
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+/* Events in Calendar */
+table ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 4px 0 0 0 !important;
+    font-size: 11px;
+    max-height: 70px;
+    overflow-y: auto;
+}
+
+table li {
+    background: #dbeafe;
+    border-left: 3px solid #3b82f6;
+    padding: 3px 6px;
+    margin: 2px 0;
+    border-radius: 3px;
+    color: #1e40af;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Delete Button */
+table button {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 2px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+table button:hover {
+    background: #dc2626;
+}
+
+/* Form Styling */
+.form-container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 30px auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+.form-container h3 {
+    color: #1f2937;
+    font-size: 28px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 15px;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    color: #374151;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="date"],
+input[type="time"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: slategrey;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    background: #f9fafb;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Button */
+button[type="submit"] {
+    background: linear-gradient(135deg, white 0%, slategray 100%);
+    color: white;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* Time Input Styling */
+input[type="time"] {
+    padding: 12px;
+}

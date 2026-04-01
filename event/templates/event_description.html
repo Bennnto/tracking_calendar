@@ -1,0 +1,12 @@
+{% extends 'event_master.html' %}
+{% block title %}
+    Event Detail
+{% endblock %}
+
+{% block content %}
+<h3>{{ content.title }}</h3>
+<p> Detail : {{ content.description }}</p>
+<p> location : {{ content.location }}</p>
+<p> Datetime : {{ content.date }} {% if content.start_time %} {{ content.start_time }} {% endif %} {% if content.end_time %}-{{ content.end_time }} {% endif %}</p>
+<a href="{% url 'event_calendar' %}"">back to calendar</a>
+{% endblock %}
